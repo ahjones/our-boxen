@@ -4,6 +4,8 @@ class people::ahjones {
     "zsh"]: ensure => present,
   }
 
+  package { "emacs": ensure => present, install_options => [ "--with-cocoa" ] }
+
   service {["dev.nginx", "dev.dnsmasq"]: ensure => stopped}
 
   include osx::global::enable_standard_function_keys
