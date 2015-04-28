@@ -18,4 +18,5 @@ class people::ahjones {
 
   include iterm2::dev
   include iterm2::colors::zenburn
+  include java
 }
