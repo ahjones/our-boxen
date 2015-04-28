@@ -80,8 +80,7 @@ node default {
     [
       'ack',
       'findutils',
-      'gnu-tar',
-      'zsh'
+      'gnu-tar'
     ]:
   }
 
