@@ -13,4 +13,7 @@ class people::ahjones {
   include osx::finder::show_all_filename_extensions
   include osx::disable_app_quarantine
   include osx::keyboard::capslock_to_control
+
+  class {'alfred': version => '2.7.1_387'}
+
 }
