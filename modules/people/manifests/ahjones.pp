@@ -23,4 +23,6 @@ class people::ahjones {
   include java
 
   include chrome
+
+  file { '/Applications/Emacs.app' : ensure => 'link', target => '/opt/boxen/homebrew/Cellar/emacs/24.5/Emacs.app', require => Package["emacs"] }
 }
