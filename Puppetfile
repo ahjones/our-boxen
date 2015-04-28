@@ -63,4 +63,3 @@ github "xquartz",     "1.2.1"
 github "java",        "1.8.2"
 github "osx",         "2.8.0"
 
-include osx::global::enable_standard_function_keys
