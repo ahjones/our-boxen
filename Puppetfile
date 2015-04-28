@@ -62,4 +62,5 @@ github "xquartz",     "1.2.1"
 # https://github.com/boxen.
 github "java",        "1.8.2"
 github "osx",         "2.8.0"
-
+github "alfred",      "1.4.0"
+github "iterm2",      "1.2.4"

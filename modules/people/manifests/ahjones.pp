@@ -16,4 +16,6 @@ class people::ahjones {
 
   class {'alfred': version => '2.7.1_387'}
 
+  include iterm2::dev
+  include iterm2::colors::zenburn
 }
