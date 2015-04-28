@@ -1,3 +1,6 @@
 class people::ahjones {
-  package { "pstree": ensure => present, }
+  package { 
+    "pstree": ensure => present,
+    "zsh": ensure => present,
+  }
 }
