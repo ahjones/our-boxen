@@ -1,6 +1,8 @@
 class people::ahjones {
-  package { 
-    "pstree": ensure => present,
-    "zsh": ensure => present,
+  package {[ 
+    "pstree",
+    "zsh"]: ensure => present,
   }
+
+  service {["dev.nginx", "dev.dnsmasq"]: ensure => stopped}
 }
