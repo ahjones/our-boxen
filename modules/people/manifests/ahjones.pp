@@ -25,4 +25,6 @@ class people::ahjones {
   include chrome
 
   file { '/Applications/Emacs.app' : ensure => 'link', target => '/opt/boxen/homebrew/Cellar/emacs/24.5/Emacs.app', require => Package["emacs"] }
+
+  osx_chsh { $::luser: shell => '/opt/boxen/homebrew/bin/zsh', require => Package['zsh'], }
 }
