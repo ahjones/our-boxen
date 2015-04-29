@@ -1,6 +1,7 @@
 class people::ahjones {
   package {[ 
     "pstree",
+    "wget",
     "zsh"]: ensure => present,
   }
 
@@ -27,4 +28,20 @@ class people::ahjones {
   file { '/Applications/Emacs.app' : ensure => 'link', target => '/opt/boxen/homebrew/Cellar/emacs/24.5/Emacs.app', require => Package["emacs"] }
 
   osx_chsh { $::luser: shell => '/opt/boxen/homebrew/bin/zsh', require => Package['zsh'], }
+
+  file {'bin':
+    path => '/Users/ahj/bin',
+    ensure => "directory",
+  }
+
+  exec {'install_lein':
+    command => "wget -q https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -O /Users/ahj/bin/lein",
+    creates => "/Users/ahj/bin/lein",
+    require => [Package["wget"], File["bin"]],
+  }
+
+  file {'/Users/ahj/bin/lein':
+    mode => 0755,
+    require => Exec["install_lein"],
+  }
 }
